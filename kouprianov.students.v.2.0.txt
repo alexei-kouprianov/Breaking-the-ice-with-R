@@ -247,13 +247,13 @@ NA	NA	NA	3	NA	NA	12	1
 # It can be used for personal educational or research purposes and distributed freely without prior consent of the author, provided that this notice is reproduced "as is".
 # It can be modified also, but the persons who modified it should clearly describe the modifications in the comments section.
 #
-# Preferred citation format (adjust accordingly, when needed): Kouprianov, Alexei (2016) Two hundred and twenty three students: height, body mass, sex, smoking behaviour, math test, and academic group. A tab-delimited dataset, V.2.0.
+# Preferred citation format (adjust accordingly, when needed): Kouprianov, Alexei (2016) Two hundred and twenty three students: height, body mass, sex, smoking behaviour, math test, and academic group. A dataset, V.2.0.
 #
 # The same in BibTeX (for the ones who know how to use it).
 # 
 # @misc{students,
 #  author       = {Alexei Kouprianov}, 
-#  title        = {Two hundred and twenty three students: height, body mass, sex, smoking behaviour, math test, and academic group. A tab-delimited dataset, V.2.0},
+#  title        = {Two hundred and twenty three students: height, body mass, sex, smoking behaviour, math test, and academic group. A dataset, V.2.0},
 #  year         = 2016
 # }
 #
