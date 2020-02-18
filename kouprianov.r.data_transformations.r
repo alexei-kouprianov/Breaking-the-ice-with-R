@@ -195,3 +195,111 @@ i <- i + 1 # adding counter increment
 summary(regions.ls[[1]])
 
 summary(regions.ls[[50]])
+
+################################################################
+# Binding vectors together: cbind(), rbind(), 
+# cbind.data.frame(), and rbind.data.frame()
+
+# Generalised form:
+
+# x12 <- cbind(x1, x2)
+# x12 <- rbind(x1, x2)
+# x12 <- cbind.data.frame(x1, x2)
+# x12 <- rbind.data.frame(x1, x2)
+
+# Note, please, that cbind(), which BINDs Columns together, 
+# and rbind(), which BINDs Rows together, may corrupt data types 
+# when used carelessly. They produce data frames at the output 
+# only if one of the input objects is a data frame. When binding 
+# vectors they end up with a matrix (converting everything to character 
+# data type if the vectors are of different data types). 
+#
+# For data.frames, it is safer to use cbind.data.frame() and rbind.data.frame()
+
+
+
+################################################################
+# Transforming data types
+
+# Generalised form:
+
+# x.factor <- as.factor(x.chr)
+# x.chr <- as.character(x.factor)
+#
+# x.num <- as.numeric(x.factor)
+# x.factor <- as.factor(x.num)
+#
+# x.num <- as.numeric(x.chr) # If and only if x.chr contains numbers only
+# x.chr <- as.character(x.numeric)
+
+################################################################
+# Managing factor levels: factor(), levels()
+
+# Generalised form:
+
+# x.factor <- as.factor(x.chr)
+# x.factor <- factor(x.chr)
+# levels(x.factor)
+# x.factor.y <- factor(x.chr, levels=y)
+#
+# x.chr <- x.factor.y
+# x.factor.z <- factor(x.chr, levels=z)
+
+################################################################
+# Merging two data frames into one: merge()
+
+# Generalised form:
+
+# x12 <- merge(x1, x2)
+
+# Sometimes, you need to unite two data frames in which some columns 
+# can be identified with each other while the others can not. 
+# E. g., you managed to obtain variables A, B, and C for the dataset X1 
+# and A, B, C, and D for the dataset X2. Even though it would not be 
+# possible to consider interdependence of A and D in all the data available, 
+# you can still do it for A, B, snd C on a combined dataset. Of course, 
+# you can always play around with c(), rbind.data.frame(), data type 
+# transformations and factor levels (if someting goes wrong), 
+# but there is a quicker and safer way.
+#
+# merge() function can carefully join two data frames keeping all variables 
+# or skipping the ones, which do not match.
+
+# Creating experimental data frame 1:
+
+X1 <- cbind.data.frame(
+c(1),
+sample(100, 10),
+rnorm(10, 20, 4),
+factor(c(rep("f", 5), rep("m", 5)), levels=c("f","m"))
+)
+
+# Assigning variable names:
+
+colnames(X1) <- c("X", "A", "B", "C")
+
+# Creating experimental data frame 2:
+
+X2 <- cbind.data.frame(
+c(2),
+sample(100, 10),
+rnorm(10, 20, 4),
+sample(100, 10),
+factor(c("f","m"), levels=c("f","m"))
+)
+
+# Assigning variable names:
+
+colnames(X2) <- c("X", "A", "B", "D", "C")
+
+# Merging two data frames:
+
+X12 <- merge(X1, X2, all=TRUE)
+
+# Read carefully help(merge), please. It is barely understandable but useful.
+
+# Previewing the experimental data.frames and the result of merge()
+
+X1
+X2
+X12
