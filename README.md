@@ -5,4 +5,4 @@ _Kouprianov, Alexei_ (2018--2019) Basics of data analysis and graphics in `R`. P
 
 and 
 
-_Kouprianov, Alexei_ (2018-2020) Basics of data analysis and graphics in `R`. Part two: retrieving summary statistics and drawing basic graphs.
+_Kouprianov, Alexei_ (2018--2020) Basics of data analysis and graphics in `R`. Part two: retrieving summary statistics and drawing basic graphs.
