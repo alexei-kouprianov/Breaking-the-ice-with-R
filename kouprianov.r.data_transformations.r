@@ -223,14 +223,69 @@ summary(regions.ls[[50]])
 
 # Generalised form:
 
-# x.factor <- as.factor(x.chr)
-# x.chr <- as.character(x.factor)
+# x.factor <- as.factor(x.chr) # converts a character vector to a factor;
+# x.chr <- as.character(x.factor) # converts a factor to a character vector;
 #
-# x.num <- as.numeric(x.factor)
-# x.factor <- as.factor(x.num)
+# x.num <- as.numeric(x.factor) # converts numeric codes of the facor levels to numeric (integer) values;
+# x.factor <- as.factor(x.num) # converts numeric values to factor levels;
 #
-# x.num <- as.numeric(x.chr) # If and only if x.chr contains numbers only
-# x.chr <- as.character(x.numeric)
+# x.num <- as.numeric(x.chr) # If and only if x.chr contains numbers only;
+# x.chr <- as.character(x.numeric) # converts a vector of numeric values to a character vector;
+
+# Creating initial vector of text values;
+
+x.chr <- c("dog","mouse","cat","cat")
+
+# Transforming data types;
+
+x.factor <- as.factor(x.chr)
+x.num <- as.numeric(x.factor)
+x.chr.1 <- as.character(x.num)
+x.chr.2 <- as.character(x.factor)
+x.num.1 <- as.numeric(x.chr.1)
+x.factor.1 <- as.factor(x.num)
+
+# Previewing vectors;
+
+x.chr
+x.factor
+x.num
+x.chr.1
+x.chr.2
+x.num.1
+x.factor.1
+
+# Assessing vectors' structure;
+
+str(x.chr)
+str(x.factor)
+str(x.num)
+str(x.chr.1)
+str(x.chr.2)
+str(x.num.1)
+str(x.factor.1)
+
+# Checking vectors' data type (only for some most instructive vectors);
+
+is.character(x.chr)
+is.factor(x.chr)
+is.numeric(x.chr)
+
+is.character(x.factor)
+is.factor(x.factor)
+is.numeric(x.factor)
+
+is.character(x.num)
+is.factor(x.num)
+is.numeric(x.num)
+
+is.character(x.chr.1)
+is.factor(x.chr.1)
+is.numeric(x.chr.1)
+
+is.character(x.factor.1)
+is.factor(x.factor.1)
+is.numeric(x.factor.1)
 
 ################################################################
 # Managing factor levels: factor(), levels()
